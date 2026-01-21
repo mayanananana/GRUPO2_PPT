@@ -11,7 +11,7 @@ public class HandlerPPT implements Runnable {
     // esta clase actualmente es un copia y pega del ejercicio usado en clase 
   
     private final Socket socket;
-
+    
     public HandlerPPT(Socket socket) {
         this.socket = socket;
     }

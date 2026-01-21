@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'juego_psp.App'
+    mainClass = 'juego_psp.ServidorPPT'
 }
 
 tasks.named('test') {

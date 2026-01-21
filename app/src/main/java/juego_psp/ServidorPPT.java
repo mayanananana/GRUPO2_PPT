@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 
 public class ServidorPPT {
-    private static final int PUERTO= 9999;
+    private static final int PUERTO= 9999; // el servidor espera conexiones en este puerto
     private static volatile boolean active= true;
     public static void main(String[] args) {
 
