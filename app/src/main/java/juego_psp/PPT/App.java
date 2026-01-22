@@ -1,7 +1,7 @@
 /*
  * MARIANA  OLGA Y HUGOOO
  */
-package juego_psp;
+package juego_psp.PPT;
 
 public class App {
     public String getGreeting() {
