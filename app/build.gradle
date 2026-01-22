@@ -47,3 +47,9 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+task runClient(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'juego_psp.PPT.ClientePPT'
+    standardInput = System.in
+}
