@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: CC3F8E;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="juego_psp.Interfaces.InterfazController">
+   <children>
+      <VBox accessibleRole="BUTTON" alignment="CENTER" layoutX="20.0" layoutY="15.0" prefHeight="566.0" prefWidth="746.0" spacing="30.0" style="-fx-background-color: C799B3; -fx-padding: 40;" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="15.0">
+         <effect>
+            <DropShadow color="rgba(0,0,0,0.3)" radius="20" />
+         </effect>
+         <children>
+            <Label fx:id="titulo" style="-fx-text-fill: white; -fx-font-size: 50;" text=" Piedra, Papel o Tijera">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="subtitulo" style="-fx-text-fill: #ecf0f1; -fx-font-size: 50;" text="Escoge uno de los tres :)" />
+            <HBox alignment="CENTER" cacheShape="false" centerShape="false" prefHeight="145.0" prefWidth="435.0" spacing="20.0">
+               <children>
+                  <Button fx:id="botonPiedra" mnemonicParsing="false" onAction="#elegirPiedra" prefHeight="72.0" prefWidth="130.0" style="-fx-background-color: C3DEBF; -fx-font-size: 25;" text="🪨 Piedra" />
+                  <Button fx:id="botonPapel" mnemonicParsing="false" onAction="#elegirPapel" prefHeight="72.0" prefWidth="130.0" style="-fx-background-color: BFC9DE; -fx-font-size: 25;" text="📄 Papel" />
+                  <Button fx:id="botonTijera" mnemonicParsing="false" onAction="#elegirTijera" prefHeight="72.0" prefWidth="130.0" style="-fx-background-color: DECDBF; -fx-font-size: 25;" text="✂ Tijera" />
+               </children>
+            </HBox>
+            <Label fx:id="resultado" style="-fx-text-fill: 43C92E; -fx-font-weight: bold;" text="Resultado: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
