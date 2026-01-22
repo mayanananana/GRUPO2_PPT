@@ -10,62 +10,50 @@ import java.util.Scanner;
 
 public class ClientePPT {
     public static void main(String[] args) {
-        String host= "localhost";
-        int puerto= 9999; // el cliente intentará conectarse a este puerto
+        String host = "localhost";
+        int puerto = 9999;
 
-        boolean conectado= true;
-
-        System.out.println("---------Iniciando partida----------");
-        
-        // se debe definir en el try-with-resources:
-        //socket, printwriter, bufferedreader y scanner 
+        System.out.println("--------- Iniciando Cliente de PPT ---------");
 
         try (Socket socket = new Socket(host, puerto);
-            // 1. Canales de comunicación
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             // 2. Escáner para leer del teclado
-             Scanner teclado = new Scanner(System.in)){
-           
-        // PASO 1: Mensaje de bienvenida del juego
-            // El servidor envía "BIENVENIDO..." nada más conectarnos.
-            String mensajeBienvenida = in.readLine();
-            System.out.println("SERVIDOR DICE: " + mensajeBienvenida);
+             Scanner teclado = new Scanner(System.in)) {
 
-            System.out.println("Introduce tu jugada"+"Piedra -- Papel -- Tijeras");
+            String lineaServidor;
+            // Bucle principal para leer mensajes del servidor
+            while ((lineaServidor = in.readLine()) != null) {
+                System.out.println("SERVIDOR: " + lineaServidor);
 
-            while(conectado){
-                System.out.print(">--");
-                String comando = teclado.nextLine();
-
-                out.println(comando);
-
-                // Recibir respuesta del servidor
-
-                String respuestaServidor= in.readLine();
-
-                if(respuestaServidor==null){
-                    System.out.println("el servidor cerró la conexión");
-                } else {
-                    System.out.println("SERVIDOR: "+respuestaServidor);
+                // Si el servidor pide una jugada
+                if (lineaServidor.contains("Ingresa tu jugada (PIEDRA, PAPEL, TIJERAS) o SALIR para terminar")) {
+                    System.out.print("Tu jugada > ");
+                    String jugada = teclado.nextLine();
+                    out.println(jugada);
+                } 
+                // Si el servidor pregunta si jugar de nuevo
+                else if (lineaServidor.contains("¿Quieres jugar otra vez?")) {
+                    System.out.print("Respuesta (SI/NO) > ");
+                    String respuesta = teclado.nextLine();
+                    out.println(respuesta);
+                    if (!respuesta.equalsIgnoreCase("SI")) {
+                        // El servidor enviará un mensaje de despedida, que se imprimirá
+                        // en la siguiente iteración del bucle y luego el bucle terminará
+                        // porque el servidor cerrará la conexión (readLine devolverá null).
+                    }
                 }
-
-                // Salida del bucle:
-                 if (comando.equalsIgnoreCase("SALIR")) {
-                    conectado = false;
+                 // Si el servidor nos dice que nos vayamos
+                else if (lineaServidor.contains("Hasta pronto!")) {
+                    break; // Salimos del bucle while
                 }
             }
-            
-            
-            
+
         } catch (ConnectException e) {
-            System.err.println("Error (de conexión al servidor): "+e.getMessage());
-        } catch(IOException e){
-            System.err.println("Error (de comunicación"+e.getMessage());
+            System.err.println("Error de conexión. ¿Está el servidor en marcha? " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Error de comunicación: " + e.getMessage());
         }
-            System.out.println("Partida finalizada????");
 
-        
+        System.out.println("--------- Cliente de PPT Finalizado ---------");
     }
-
 }
