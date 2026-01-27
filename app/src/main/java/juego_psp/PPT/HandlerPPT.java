@@ -109,7 +109,7 @@ public class HandlerPPT implements Runnable {
         String jugadaCliente;
 
         while (puntosJugador == puntosBot) {
-            out.println("DESEMPATE");
+            out.println("DESEMPATE. ¡Ingresa tu jugada para desempatar!");
             jugadaCliente = in.readLine();
             if (jugadaCliente == null || jugadaCliente.equalsIgnoreCase(SALIR)) {
                 out.println("Juego terminado.");
