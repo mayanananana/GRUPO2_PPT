@@ -72,7 +72,6 @@ public class HandlerPPT implements Runnable {
         while (rondasJugadas < 3) {
             out.println("\n--- RONDA " + (rondasJugadas + 1) + " ---");
             out.println("Ingresa tu jugada (" + PIEDRA + ", " + PAPEL + ", " + TIJERAS + ") o " + SALIR + " para terminar:");
-            out.print(">");
 
             String jugadaCliente = in.readLine();
             if (jugadaCliente == null || jugadaCliente.equalsIgnoreCase(SALIR)) {
