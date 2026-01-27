@@ -25,14 +25,32 @@
 
                 <Button fx:id="botonIniciar" onAction="#iniciarJuego" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 16;" text="Iniciar Partida" />
 
-                <TextArea fx:id="areaDeJuego" editable="false" prefHeight="200.0" prefWidth="666.0" wrapText="true">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets top="10.0" />
-                    </VBox.margin>
-                </TextArea>
+                <!-- El Area de Juego ahora estará oculta o tendrá un tamaño mínimo para depuración si se desea, pero el usuario pidió que no salga todo seguido y sea visual -->
+                <TextArea fx:id="areaDeJuego" editable="false" managed="false" prefHeight="0.0" prefWidth="0.0" visible="false" wrapText="true" />
+
+                <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: rgba(255,255,255,0.1); -fx-padding: 20; -fx-background-radius: 15;">
+                    <children>
+                        <HBox alignment="CENTER" spacing="50.0">
+                            <children>
+                                <VBox alignment="CENTER">
+                                    <children>
+                                        <Label style="-fx-text-fill: white; -fx-font-size: 18;" text="TÚ" />
+                                        <Label fx:id="labelJugadaJugador" style="-fx-text-fill: #ecf0f1; -fx-font-size: 40;" text="❓" />
+                                    </children>
+                                </VBox>
+                                <Label style="-fx-text-fill: white; -fx-font-size: 30;" text="VS" />
+                                <VBox alignment="CENTER">
+                                    <children>
+                                        <Label style="-fx-text-fill: white; -fx-font-size: 18;" text="SERVIDOR" />
+                                        <Label fx:id="labelJugadaServidor" style="-fx-text-fill: #ecf0f1; -fx-font-size: 40;" text="❓" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <Label fx:id="labelResultadoRonda" style="-fx-text-fill: #f1c40f; -fx-font-size: 22; -fx-font-weight: bold;" text="¡Esperando jugada!" />
+                        <Label fx:id="labelMarcador" style="-fx-text-fill: white; -fx-font-size: 18;" text="Marcador: Jugador 0 - 0 Servidor" />
+                    </children>
+                </VBox>
 
                 <Label fx:id="subtitulo" style="-fx-text-fill: #ecf0f1; -fx-font-size: 24;" text="Elige tu jugada:" />
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">

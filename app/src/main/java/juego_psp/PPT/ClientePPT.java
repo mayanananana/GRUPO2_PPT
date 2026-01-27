@@ -7,21 +7,47 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.function.Consumer;
 
+/**
+ * Cliente de red para el juego de Piedra, Papel o Tijera.
+ * Gestiona la conexión con el servidor y la comunicación asíncrona recibiendo
+ * mensajes en un hilo separado.
+ */
 public class ClientePPT {
 
+    /** Nombre del host o dirección IP del servidor */
     private final String host;
+    /** Puerto TCP del servidor */
     private final int puerto;
+    /** Socket de conexión */
     private Socket socket;
+    /** Canal de salida de datos hacia el servidor */
     private PrintWriter out;
+    /** Canal de entrada de datos desde el servidor */
     private BufferedReader in;
+    /**
+     * Callback para procesar mensajes recibidos y enviarlos a la interfaz de
+     * usuario
+     */
     private final Consumer<String> onMessageReceived; // Callback para mensajes del servidor
 
+    /**
+     * Inicializa el cliente con los datos de conexión necesarios.
+     * 
+     * @param host              Dirección del servidor (ej. "localhost").
+     * @param puerto            Puerto del servidor (ej. 9999).
+     * @param onMessageReceived Función que recibe los mensajes del servidor para
+     *                          actualizar la UI.
+     */
     public ClientePPT(String host, int puerto, Consumer<String> onMessageReceived) {
         this.host = host;
         this.puerto = puerto;
         this.onMessageReceived = onMessageReceived;
     }
 
+    /**
+     * Establece la conexión con el servidor e inicia el hilo para escuchar
+     * mensajes.
+     */
     public void conectar() {
         try {
             socket = new Socket(host, puerto);
@@ -39,6 +65,10 @@ public class ClientePPT {
         }
     }
 
+    /**
+     * Escucha continuamente los mensajes del servidor en un bucle mientras la
+     * conexión esté abierta.
+     */
     private void escucharAlServidor() {
         try {
             String mensajeDelServidor;
@@ -55,12 +85,20 @@ public class ClientePPT {
         }
     }
 
+    /**
+     * Envía una jugada o mensaje de control al servidor.
+     * 
+     * @param mensaje El texto a enviar (ej. "PIEDRA", "SI", "NO").
+     */
     public void enviarMensaje(String mensaje) {
         if (out != null) {
             out.println(mensaje);
         }
     }
 
+    /**
+     * Cierra el socket y libera los recursos de red de forma segura.
+     */
     public void desconectar() {
         try {
             if (socket != null && !socket.isClosed()) {
