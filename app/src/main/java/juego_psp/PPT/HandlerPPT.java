@@ -111,7 +111,7 @@ public class HandlerPPT implements Runnable {
         return opciones[random.nextInt(opciones.length)];
     }
 
-    private boolean esJugadaValida(String jugada) {
+    boolean esJugadaValida(String jugada) {
         for (String opcion : opciones) {
             if (opcion.equalsIgnoreCase(jugada)) {
                 return true;
@@ -120,7 +120,7 @@ public class HandlerPPT implements Runnable {
         return false;
     }
 
-    private String determinarGanador(String jugador, String servidor) {
+    String determinarGanador(String jugador, String servidor) {
         if (jugador.equals(servidor)) {
             return "RONDA: EMPATE";
         }

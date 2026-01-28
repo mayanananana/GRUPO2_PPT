@@ -1,0 +1,341 @@
+﻿Reusing configuration cache.
+> Task :app:processTestResources NO-SOURCE
+> Task :app:processResources UP-TO-DATE
+> Task :app:compileJava UP-TO-DATE
+> Task :app:classes UP-TO-DATE
+> Task :app:jar UP-TO-DATE
+> Task :app:startScripts UP-TO-DATE
+> Task :app:distTar
+
+> Task :app:compileTestJava FAILED
+./gradlew : C:\User
+s\olgam\Desktop\DAM
+\PROYECTOS CLASE\PS
+P\Grupo2_PPT\GRUPO2
+_PPT\app\src\test\j
+ava\juego_psp\PPT\H
+andlerPPTTest.java:
+27: error: esJugada
+Valida(String) has 
+private access in 
+HandlerPPT
+En línea: 1 
+Carácter: 1
++ ./gradlew build 
+> build_output.txt 
+2>&1
++ ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+~~~
+    + CategoryInfo 
+             : No  
+  tSpecified: (C   
+ :\Users\olgam\    
+...s in Handle    
+rPPT:String) [    
+], RemoteExcep    
+tion
+    + FullyQualifi 
+   edErrorId : Na  
+  tiveCommandErr   
+ or
+ 
+        assertTrue(
+handler.esJugadaVal
+ida("PIEDRA"));
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:28: error: e
+sJugadaValida(Strin
+g) has private 
+access in 
+HandlerPPT
+        assertTrue(
+handler.esJugadaVal
+ida("PAPEL"));
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:29: error: e
+sJugadaValida(Strin
+g) has private 
+access in 
+HandlerPPT
+        assertTrue(
+handler.esJugadaVal
+ida("TIJERAS"));
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:30: error: e
+sJugadaValida(Strin
+g) has private 
+access in 
+HandlerPPT
+        assertTrue(
+handler.esJugadaVal
+ida("piedra")); // 
+Caso insensible
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:31: error: e
+sJugadaValida(Strin
+g) has private 
+access in 
+HandlerPPT
+        assertFalse
+(handler.esJugadaVa
+lida("LAGARTO"));
+                   
+        ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:32: error: e
+sJugadaValida(Strin
+g) has private 
+access in 
+HandlerPPT
+        assertFalse
+(handler.esJugadaVa
+lida(""));
+                   
+        ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:33: error: e
+sJugadaValida(Strin
+g) has private 
+access in 
+HandlerPPT
+        assertFalse
+(handler.esJugadaVa
+lida(null));
+                   
+        ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:43: error: d
+eterminarGanador(St
+ring,String) has 
+private access in 
+HandlerPPT
+        assertEqual
+s("RONDA: EMPATE", 
+handler.determinarG
+anador("PIEDRA", 
+"PIEDRA"));
+                   
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:44: error: d
+eterminarGanador(St
+ring,String) has 
+private access in 
+HandlerPPT
+        assertEqual
+s("RONDA: EMPATE", 
+handler.determinarG
+anador("PAPEL", 
+"PAPEL"));
+                   
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:47: error: d
+eterminarGanador(St
+ring,String) has 
+private access in 
+HandlerPPT
+        assertTrue(
+handler.determinarG
+anador("PIEDRA", "T
+IJERAS").contains("
+GANAS"));
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:48: error: d
+eterminarGanador(St
+ring,String) has 
+private access in 
+HandlerPPT
+        assertTrue(
+handler.determinarG
+anador("PAPEL", "PI
+EDRA").contains("GA
+NAS"));
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:49: error: d
+eterminarGanador(St
+ring,String) has 
+private access in 
+HandlerPPT
+        assertTrue(
+handler.determinarG
+anador("TIJERAS", "
+PAPEL").contains("G
+ANAS"));
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:52: error: d
+eterminarGanador(St
+ring,String) has 
+private access in 
+HandlerPPT
+        assertTrue(
+handler.determinarG
+anador("PIEDRA", "P
+APEL").contains("PI
+ERDES"));
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:53: error: d
+eterminarGanador(St
+ring,String) has 
+private access in 
+HandlerPPT
+        assertTrue(
+handler.determinarG
+anador("TIJERAS", "
+PIEDRA").contains("
+PIERDES"));
+                   
+       ^
+C:\Users\olgam\Desk
+top\DAM\PROYECTOS C
+LASE\PSP\Grupo2_PPT
+\GRUPO2_PPT\app\src
+\test\java\juego_ps
+p\PPT\HandlerPPTTes
+t.java:54: error: d
+eterminarGanador(St
+ring,String) has 
+private access in 
+HandlerPPT
+        assertTrue(
+handler.determinarG
+anador("PAPEL", "TI
+JERAS").contains("P
+IERDES"));
+                   
+       ^
+15 errors
+
+> Task :app:distZip
+
+[Incubating] Problems report is available at: file:///C:/Users/olgam/Desktop/DAM/PROYECTOS%20CLASE/PSP/Grupo2_PPT/GRUPO2_PPT/build/reports/problems/problems-report.html
+
+FAILURE: Build 
+failed with an 
+exception.
+
+* What went wrong:
+Execution failed 
+for task ':app:comp
+ileTestJava'.
+> Compilation 
+failed; see the 
+compiler output 
+below.
+  C:\Users\olgam\De
+sktop\DAM\PROYECTOS
+ CLASE\PSP\Grupo2_P
+PT\GRUPO2_PPT\app\s
+rc\test\java\juego_
+psp\PPT\HandlerPPTT
+est.java:27: 
+error: esJugadaVali
+da(String) has 
+private access in 
+HandlerPPT
+          assertTru
+e(handler.esJugadaV
+alida("PIEDRA"));
+                   
+         ^
+  15 errors
+
+* Try:
+> Check your code 
+and dependencies 
+to fix the 
+compilation 
+error(s)
+> Run with --scan 
+to generate a 
+Build Scan 
+(powered by 
+Develocity).
+
+BUILD FAILED in 3s
+7 actionable tasks: 3 executed, 4 up-to-date
+Configuration cache entry reused.
