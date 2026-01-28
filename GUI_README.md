@@ -335,24 +335,6 @@ Ya están en la TextArea de la GUI.
 
 ---
 
-## 🎮 Ejercicios
-
-### ✏️ Ejercicio 1: Cambiar Colores
-Modifica los estilos CSS del FXML para cambiar colores
-
-### ✏️ Ejercicio 2: Agregar Sonidos
-Agrega sonidos al ganar/perder (JavaFX Media)
-
-### ✏️ Ejercicio 3: Mostrar IP del Cliente
-En el área de logs, muestra la IP del cliente conectado
-
-### ✏️ Ejercicio 4: Desactivar Botones Correctamente
-Ahora mismo se pueden hacer click mientras el servidor está pensando. Arréglalo.
-
-### ✏️ Ejercicio 5: Animaciones
-Agrega animaciones cuando ganas/pierdes una ronda
-
----
 
 ## ⚠️ Cosas Importantes
 
@@ -366,22 +348,5 @@ Agrega animaciones cuando ganas/pierdes una ronda
 
 ---
 
-## 🔗 Relacionado
 
-- 📄 **README.md** - Visión general del proyecto
-- 📄 **CONSOLA_README.md** - Guía para rama `base-sin-interfaz`
-- 🌳 **base-sin-interfaz** - Versión pura sin interfaz
 
----
-
-## 🎯 Conceptos Demostrados Aquí
-
-✅ **Integración UI + Red** - GUI actualiza con eventos de red  
-✅ **Callbacks** - UI se entera de eventos del cliente  
-✅ **Thread Safety** - Platform.runLater para UI segura  
-✅ **Reutilización de Código** - ServidorPPT idéntico en ambas ramas  
-✅ **Evolución de Software** - De consola a GUI manteniendo lógica  
-
----
-
-**¡Juega, aprende y experimenta!** 🎮

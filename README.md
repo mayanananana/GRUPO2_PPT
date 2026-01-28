@@ -198,7 +198,7 @@ git log --oneline
 
 ---
 
-## 💡 Conceptos Educativos
+##  Conceptos Educativos
 
 Este proyecto demuestra:
 
@@ -217,4 +217,3 @@ Grupo 2 - PSP (Programación de Servicios y Procesos)
 
 ---
 
-**¡Diviértete jugando y aprendiendo sobre arquitectura de red!** 🎮
