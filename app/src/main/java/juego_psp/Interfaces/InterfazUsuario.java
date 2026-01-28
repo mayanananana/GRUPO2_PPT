@@ -1,4 +1,4 @@
-package juego_psp.Interfaces;
+package juego_psp.interfaces;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

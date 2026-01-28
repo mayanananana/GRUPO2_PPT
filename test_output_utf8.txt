@@ -1,0 +1,172 @@
+﻿Initialized native services in: C:\Users\olgam\.gradle\native
+Initialized jansi services in: C:\Users\olgam\.gradle\native
+Found daemon DaemonInfo{pid=23336, address=[357ac080-bb54-488a-a024-6701255039d9 port:55406, addresses:[/127.0.0.1]], state=Idle, lastBusy=1769252416661, context=DefaultDaemonContext[uid=fcfac2f7-c0f0-4795-82f8-17b11c951d28,javaHome=C:\Users\olgam\.antigravity\extensions\redhat.java-1.51.0-win32-x64\jre\21.0.9-win32-x86_64,javaVersion=21,javaVendor=Eclipse Adoptium,daemonRegistryDir=C:\Users\olgam\.gradle\daemon,pid=23336,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=ES,-Duser.language=es,-Duser.variant]} however its context does not match the desired criteria.
+JVM is incompatible.
+Wanted: DaemonRequestContext{jvmCriteria=C:\Program Files\Java\jdk-25 (no JDK specified, using current Java home), daemonOpts=[-XX:MaxMetaspaceSize=384m, -XX:+HeapDumpOnOutOfMemoryError, -Xms256m, -Xmx512m, -Dfile.encoding=UTF-8, -Duser.country=ES, -Duser.language=es, -Duser.variant], applyInstrumentationAgent=true, nativeServicesMode=ENABLED, priority=NORMAL}
+Actual: DefaultDaemonContext[uid=fcfac2f7-c0f0-4795-82f8-17b11c951d28,javaHome=C:\Users\olgam\.antigravity\extensions\redhat.java-1.51.0-win32-x64\jre\21.0.9-win32-x86_64,javaVersion=21,javaVendor=Eclipse Adoptium,daemonRegistryDir=C:\Users\olgam\.gradle\daemon,pid=23336,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=ES,-Duser.language=es,-Duser.variant]
+
+  Looking for a different daemon...
+Found daemon DaemonInfo{pid=13076, address=[090cf5a6-c639-404e-a3b0-2b7f7f73db57 port:51660, addresses:[/127.0.0.1]], state=Idle, lastBusy=1769618154702, context=DefaultDaemonContext[uid=a21e86a6-dbb9-4753-9a63-64688f2db5c2,javaHome=C:\Users\olgam\.antigravity\extensions\redhat.java-1.51.0-win32-x64\jre\21.0.9-win32-x86_64,javaVersion=21,javaVendor=Eclipse Adoptium,daemonRegistryDir=C:\Users\olgam\.gradle\daemon,pid=13076,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=ES,-Duser.language=es,-Duser.variant]} however its context does not match the desired criteria.
+JVM is incompatible.
+Wanted: DaemonRequestContext{jvmCriteria=C:\Program Files\Java\jdk-25 (no JDK specified, using current Java home), daemonOpts=[-XX:MaxMetaspaceSize=384m, -XX:+HeapDumpOnOutOfMemoryError, -Xms256m, -Xmx512m, -Dfile.encoding=UTF-8, -Duser.country=ES, -Duser.language=es, -Duser.variant], applyInstrumentationAgent=true, nativeServicesMode=ENABLED, priority=NORMAL}
+Actual: DefaultDaemonContext[uid=a21e86a6-dbb9-4753-9a63-64688f2db5c2,javaHome=C:\Users\olgam\.antigravity\extensions\redhat.java-1.51.0-win32-x64\jre\21.0.9-win32-x86_64,javaVersion=21,javaVendor=Eclipse Adoptium,daemonRegistryDir=C:\Users\olgam\.gradle\daemon,pid=13076,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=ES,-Duser.language=es,-Duser.variant]
+
+  Looking for a different daemon...
+The client will now receive all logging from the daemon (pid: 4972). The daemon log file: C:\Users\olgam\.gradle\daemon\9.2.0\daemon-4972.out.log
+Starting 5th build in daemon [uptime: 15 mins 39.696 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 19% of 384 MiB]
+Using 8 worker leases.
+Operational build model parameters: {requiresToolingModels=false, parallelProjectExecution=false, configureOnDemand=false, configurationCache=true, configurationCacheParallelStore=false, configurationCacheParallelLoad=true, isolatedProjects=false, parallelProjectConfiguration=false, intermediateModelCache=false, parallelToolingApiActions=false, invalidateCoupledProjects=false, modelAsProjectDependency=false, resilientModelBuilding=false}
+Encryption key source: default Gradle keystore (pkcs12)
+Now considering [C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT] as hierarchies to watch
+Calculating task graph as configuration cache cannot be reused because file 'app\build.gradle' has changed.
+Now considering [C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Resolved plugin [id: 'org.gradle.toolchains.foojay-resolver-convention', version: '1.0.0']
+Settings evaluated using settings file 'C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\settings.gradle'.
+Projects loaded. Root project using build file 'C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\build.gradle'.
+Included projects: [root project 'JUEGO_PSP', project ':app']
+
+> Configure project :
+Evaluating root project 'JUEGO_PSP' using build file 'C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\build.gradle'.
+
+> Configure project :app
+Evaluating project ':app' using build file 'C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\app\build.gradle'.
+Resolved plugin [id: 'application']
+Resolved plugin [id: 'org.openjfx.javafxplugin', version: '0.1.0']
+------------------------------------------------------------------------
+Detecting the operating system and CPU architecture
+------------------------------------------------------------------------
+os.detected.name=windows
+os.detected.arch=x86_64
+os.detected.bitness=64
+os.detected.version=10.0
+os.detected.version.major=10
+os.detected.version.minor=0
+os.detected.classifier=windows-x86_64
+All projects evaluated.
+Task name matched 'test'
+Selected primary task 'test' from project :
+Tasks to be executed: [task ':app:compileJava', task ':app:processResources', task ':app:classes', task ':app:compileTestJava', task ':app:processTestResources', task ':app:testClasses', task ':app:test']
+Tasks that were excluded: []
+Ignoring listeners of task graph ready event, as this build (:) has already executed work.
+Resolve mutations for :app:compileJava (Thread[#345,Execution worker,5,main]) started.
+Resolve mutations for :app:processResources (Thread[#346,Execution worker Thread 2,5,main]) started.
+Resolve mutations for :app:processTestResources (Thread[#347,Execution worker Thread 3,5,main]) started.
+:app:processResources (Thread[#347,Execution worker Thread 3,5,main]) started.
+:app:processTestResources (Thread[#344,included builds,5,main]) started.
+:app:compileJava (Thread[#346,Execution worker Thread 2,5,main]) started.
+
+> Task :app:processTestResources NO-SOURCE
+Skipping task ':app:processTestResources' as it has no source files and no previous output files.
+
+> Task :app:processResources UP-TO-DATE
+Caching disabled for task ':app:processResources' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':app:processResources' as it is up-to-date.
+
+> Task :app:compileJava UP-TO-DATE
+Caching disabled for task ':app:compileJava' because:
+  Build cache is disabled
+Skipping task ':app:compileJava' as it is up-to-date.
+Resolve mutations for :app:classes (Thread[#346,Execution worker Thread 2,5,main]) started.
+:app:classes (Thread[#346,Execution worker Thread 2,5,main]) started.
+
+> Task :app:classes UP-TO-DATE
+Skipping task ':app:classes' as it has no actions.
+Resolve mutations for :app:compileTestJava (Thread[#346,Execution worker Thread 2,5,main]) started.
+:app:compileTestJava (Thread[#346,Execution worker Thread 2,5,main]) started.
+
+> Task :app:compileTestJava UP-TO-DATE
+Caching disabled for task ':app:compileTestJava' because:
+  Build cache is disabled
+Skipping task ':app:compileTestJava' as it is up-to-date.
+Resolve mutations for :app:testClasses (Thread[#346,Execution worker Thread 2,5,main]) started.
+:app:testClasses (Thread[#346,Execution worker Thread 2,5,main]) started.
+
+> Task :app:testClasses UP-TO-DATE
+Skipping task ':app:testClasses' as it has no actions.
+Resolve mutations for :app:test (Thread[#346,Execution worker Thread 2,5,main]) started.
+:app:test (Thread[#346,Execution worker Thread 2,5,main]) started.
+Gradle Test Executor 3 started executing tests.
+Gradle Test Executor 3 finished executing tests.
+
+> Task :app:test FAILED
+Caching disabled for task ':app:test' because:
+  Build cache is disabled
+Task ':app:test' is not up-to-date because:
+  Task has failed previously.
+Starting process 'Gradle Test Executor 3'. Working directory: C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\app Command: C:\Users\olgam\.gradle\jdks\eclipse_adoptium-21-amd64-windows.2\bin\java.exe -Dorg.gradle.internal.worker.tmpdir=C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\app\build\tmp\test\work @C:\Users\olgam\.gradle\.tmp\gradle-worker-classpath16650096185434843241txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=ES -Duser.language=es -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 3'
+Successfully started process 'Gradle Test Executor 3'
+Finished generating test XML results (0.002 secs) into: C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\app\build\test-results\test
+Generating HTML test report...
+Finished generating test html results (0.008 secs) into: C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\app\build\reports\tests\test
+
+See the complete report at file:///C:/Users/olgam/Desktop/DAM/PROYECTOS%20CLASE/PSP/Grupo2_PPT/GRUPO2_PPT/build/reports/configuration-cache/a91xw6g431s59z1dkjtqb1bo9/3h5cxa9gki4ufxg02harh8vsn/configuration-cache-report.html
+./gradlew : 
+En línea: 1 
+Carácter: 1
++ ./gradlew test 
+--info > 
+test_output.txt 
+2>&1
++ ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo 
+             : No  
+  tSpecified: (:   
+ String) [], Re    
+moteException
+    + FullyQualifi 
+   edErrorId : Na  
+  tiveCommandErr   
+ or
+ 
+FAILURE: Build 
+failed with an 
+exception.
+
+* What went wrong:
+Execution failed 
+for task 
+':app:test'.
+> Test process 
+encountered an 
+unexpected problem.
+   > Could not 
+execute test class 
+'juego_psp.PPT.Hand
+lerPPTTest'.
+
+* Try:
+> Check common 
+problems https://do
+cs.gradle.org/9.2.0
+/userguide/java_tes
+ting.html#sec:java_
+testing_troubleshoo
+ting.
+> Run with 
+--stacktrace 
+option to get the 
+stack trace.
+> Run with --debug 
+option to get more 
+log output.
+> Run with --scan 
+to generate a 
+Build Scan 
+(powered by 
+Develocity).
+> Get more help at 
+https://help.gradle
+.org.
+
+BUILD FAILED in 4s
+4 actionable tasks: 1 executed, 3 up-to-date
+Watched directory hierarchies: [C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT]
+Configuration cache entry stored.
+Configuration Cache (C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\.gradle\configuration-cache) [subdir: C:\Users\olgam\Desktop\DAM\PROYECTOS CLASE\PSP\Grupo2_PPT\GRUPO2_PPT\.gradle\configuration-cache\6c28898e-bbe3-45df-bb50-e2fa3f18e8b9] cleanup deleted 8 files/directories.

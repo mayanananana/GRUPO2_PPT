@@ -1,4 +1,4 @@
-package juego_psp.PPT;
+package juego_psp.ppt;
 
 import java.io.BufferedReader;
 import java.io.IOException;

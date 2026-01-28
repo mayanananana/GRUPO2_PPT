@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: CC3F8E;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="juego_psp.Interfaces.InterfazController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: CC3F8E;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="juego_psp.interfaces.InterfazController">
     <children>
         <VBox alignment="CENTER" layoutX="20.0" layoutY="15.0" prefHeight="566.0" prefWidth="746.0" spacing="20.0" style="-fx-background-color: C799B3; -fx-padding: 20;" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="15.0">
             <effect>

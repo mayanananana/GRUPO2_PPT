@@ -1,4 +1,4 @@
-package juego_psp.Interfaces;
+package juego_psp.interfaces;
 
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
@@ -10,8 +10,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.util.Duration;
-import juego_psp.PPT.ClientePPT;
-import juego_psp.PPT.ServidorPPT;
+import juego_psp.ppt.ClientePPT;
+import juego_psp.ppt.ServidorPPT;
 
 /**
  * Controlador de la interfaz de usuario JavaFX para el juego Piedra, Papel o

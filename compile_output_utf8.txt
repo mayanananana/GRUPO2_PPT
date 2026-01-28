@@ -1,0 +1,6 @@
+﻿Reusing configuration cache.
+> Task :app:compileJava UP-TO-DATE
+
+BUILD SUCCESSFUL in 2s
+1 actionable task: 1 up-to-date
+Configuration cache entry reused.
