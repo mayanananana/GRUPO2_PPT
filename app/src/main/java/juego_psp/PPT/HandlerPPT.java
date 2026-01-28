@@ -97,7 +97,8 @@ public class HandlerPPT implements Runnable {
         puntosBot = 0;
         rondasJugadas = 0;
 
-        while (puntosJugador < 2 && puntosBot < 2) {
+        // Jugar hasta 3 rondas o hasta que alguno llegue a 2 puntos
+        while (rondasJugadas < 3 && puntosJugador < 2 && puntosBot < 2) {
             pausa(500);
             out.println("\n--- RONDA " + (rondasJugadas + 1) + " ---");
             pausa(500);
@@ -125,6 +126,49 @@ public class HandlerPPT implements Runnable {
 
             pausa(500);
             rondasJugadas++;
+            out.println("MARCADOR: Jugador " + puntosJugador + " - " + puntosBot + " Servidor");
+        }
+
+        // Si tras 3 rondas hay empate, jugar desempate
+        if (puntosJugador == puntosBot && rondasJugadas >= 3) {
+            jugarRondaDesempate(in, out);
+        } else {
+            anunciarGanadorPartida(out);
+        }
+    }
+
+    /**
+     * Gestiona las rondas de desempate cuando, tras 3 rondas, el marcador está empatado.
+     */
+    private void jugarRondaDesempate(BufferedReader in, PrintWriter out) throws IOException {
+        String jugadaCliente;
+
+        while (puntosJugador == puntosBot) {
+            out.println("DESEMPATE");
+            pausa(300);
+            out.println("Ingresa tu jugada (" + PIEDRA + ", " + PAPEL + ", " + TIJERAS + ") o " + SALIR
+                    + " para terminar:");
+            out.print(">");
+
+            jugadaCliente = in.readLine();
+            if (jugadaCliente == null || jugadaCliente.equalsIgnoreCase(SALIR)) {
+                out.println("Juego terminado.");
+                return;
+            }
+
+            if (!esJugadaValida(jugadaCliente)) {
+                out.println("ERROR: Jugada no válida. Inténtalo de nuevo.");
+                continue;
+            }
+
+            pausa(400);
+            String jugadaServidor = generarJugadaServidor();
+            out.println("El servidor eligió: " + jugadaServidor);
+
+            pausa(600);
+            out.println(determinarGanador(jugadaCliente.toUpperCase(), jugadaServidor));
+
+            pausa(500);
             out.println("MARCADOR: Jugador " + puntosJugador + " - " + puntosBot + " Servidor");
         }
 
