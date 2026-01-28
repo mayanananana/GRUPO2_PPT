@@ -40,7 +40,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'juego_psp.ServidorPPT'
+    mainClass = 'juego_psp.Interfaces.Launcher'
 }
 
 tasks.named('test') {
@@ -48,7 +48,27 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+// Tarea para ejecutar la INTERFAZ GRÁFICA (GUI)
+task runGUI(type: JavaExec) {
+    group = 'PPT Game'
+    description = 'Ejecuta la interfaz gráfica JavaFX del juego'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'juego_psp.Interfaces.Launcher'
+}
+
+// Tarea para ejecutar el SERVIDOR en la terminal (sin GUI)
+task runServer(type: JavaExec) {
+    group = 'PPT Game'
+    description = 'Ejecuta solo el servidor de Piedra, Papel o Tijeras en consola'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'juego_psp.PPT.ServidorPPT'
+    standardInput = System.in
+}
+
+// Tarea para ejecutar el CLIENTE en la terminal (sin GUI)
 task runClient(type: JavaExec) {
+    group = 'PPT Game'
+    description = 'Ejecuta solo el cliente de Piedra, Papel o Tijeras en consola'
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'juego_psp.PPT.ClientePPT'
     standardInput = System.in
