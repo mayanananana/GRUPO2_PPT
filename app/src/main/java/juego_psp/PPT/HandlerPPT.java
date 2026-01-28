@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Random;
 
-
 public class HandlerPPT implements Runnable {
 
     private static final String PIEDRA = "PIEDRA";
@@ -22,7 +21,7 @@ public class HandlerPPT implements Runnable {
     private final Socket socket;
     private int puntosJugador;
     private int puntosBot;
-    private final String[] opciones = {PIEDRA, PAPEL, TIJERAS};
+    private final String[] opciones = { PIEDRA, PAPEL, TIJERAS };
     private int rondasJugadas;
     private final Random random = new Random();
 
@@ -35,9 +34,9 @@ public class HandlerPPT implements Runnable {
     @Override
     public void run() {
         try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
-            out.println("BIENVENIDO A PIEDRA, PAPEL O TIJERAS");
+            out.println("BIENVENIDO A PIEDRA, PAPEL O TIJERAS (AL MEJOR DE 2 PUNTOS)");
 
             boolean jugarDeNuevo = true;
             while (jugarDeNuevo) {
@@ -67,11 +66,11 @@ public class HandlerPPT implements Runnable {
         puntosJugador = 0;
         puntosBot = 0;
         rondasJugadas = 0;
-        String resultadoRonda="";
 
-        while (rondasJugadas < 3) {
+        while (puntosJugador < 2 && puntosBot < 2) {
             out.println("\n--- RONDA " + (rondasJugadas + 1) + " ---");
-            out.println("Ingresa tu jugada (" + PIEDRA + ", " + PAPEL + ", " + TIJERAS + ") o " + SALIR + " para terminar:");
+            out.println("Ingresa tu jugada (" + PIEDRA + ", " + PAPEL + ", " + TIJERAS + ") o " + SALIR
+                    + " para terminar:");
 
             String jugadaCliente = in.readLine();
             if (jugadaCliente == null || jugadaCliente.equalsIgnoreCase(SALIR)) {
@@ -87,44 +86,10 @@ public class HandlerPPT implements Runnable {
             String jugadaServidor = generarJugadaServidor();
             out.println("El servidor eligió: " + jugadaServidor);
 
-            resultadoRonda = determinarGanador(jugadaCliente.toUpperCase(), jugadaServidor);
+            String resultadoRonda = determinarGanador(jugadaCliente.toUpperCase(), jugadaServidor);
             out.println(resultadoRonda);
 
             rondasJugadas++;
-            out.println("MARCADOR: Jugador " + puntosJugador + " - " + puntosBot + " Servidor");
-        }
-
-        // Regla de desempate
-        if (puntosJugador == puntosBot && rondasJugadas == 3) {
-            out.println("\n¡EMPATE EN LAS 3 RONDAS! Se jugará una ronda de desempate.");
-            jugarRondaDesempate(in, out);
-        } else {
-            anunciarGanadorPartida(out);
-        }
-    }
-
-    private void jugarRondaDesempate(BufferedReader in, PrintWriter out) throws IOException {
-        String resultadoRonda;
-        String jugadaCliente;
-
-        while (puntosJugador == puntosBot) {
-            out.println("DESEMPATE");
-            jugadaCliente = in.readLine();
-            if (jugadaCliente == null || jugadaCliente.equalsIgnoreCase(SALIR)) {
-                out.println("Juego terminado.");
-                return;
-            }
-
-            if (!esJugadaValida(jugadaCliente)) {
-                out.println("ERROR: Jugada no válida. Inténtalo de nuevo.");
-                continue;
-            }
-
-            String jugadaServidor = generarJugadaServidor();
-            out.println("El servidor eligió: " + jugadaServidor);
-
-            resultadoRonda = determinarGanador(jugadaCliente.toUpperCase(), jugadaServidor);
-            out.println(resultadoRonda);
             out.println("MARCADOR: Jugador " + puntosJugador + " - " + puntosBot + " Servidor");
         }
 
@@ -141,8 +106,6 @@ public class HandlerPPT implements Runnable {
             out.println("¡La partida ha terminado en empate!");
         }
     }
-
-
 
     private String generarJugadaServidor() {
         return opciones[random.nextInt(opciones.length)];
