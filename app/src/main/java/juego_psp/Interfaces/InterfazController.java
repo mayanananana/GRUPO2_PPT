@@ -210,8 +210,10 @@ public class InterfazController {
             } else if (mensaje.contains("FIN_JUEGO")) {
                 finalizarPartida();
             } else if (mensaje.startsWith("--- RONDA")) {
+                // Mostrar cabecera de ronda; no reiniciar visuales aquí para
+                // mantener las imágenes y el resultado anterior hasta que el
+                // usuario realice la siguiente acción (pulsar su jugada).
                 labelResultadoRonda.setText(mensaje);
-                resetVisuals();
             } else if (mensaje.contains("¡FELICIDADES!") || mensaje.contains("ha ganado la partida")) {
                 labelResultadoRonda.setText(mensaje);
             }
