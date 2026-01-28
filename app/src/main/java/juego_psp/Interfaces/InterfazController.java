@@ -1,7 +1,6 @@
 package juego_psp.Interfaces;
 
-import juego_psp.PPT.ClientePPT;
-import juego_psp.PPT.ServidorPPT;
+import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,6 +9,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.util.Duration;
+import juego_psp.PPT.ClientePPT;
+import juego_psp.PPT.ServidorPPT;
 
 /**
  * Controlador de la interfaz de usuario JavaFX para el juego Piedra, Papel o
@@ -189,7 +191,18 @@ public class InterfazController {
                 String eleccion = mensaje.split(":")[1].trim().toUpperCase();
                 setImagenLabel(labelJugadaServidor, eleccion);
             } else if (mensaje.startsWith("RONDA:")) {
+                // Mostrar resultado de la ronda y pausar brevemente la UI para que se vea
                 labelResultadoRonda.setText(mensaje);
+                botonPiedra.setDisable(true);
+                botonPapel.setDisable(true);
+                botonTijera.setDisable(true);
+                PauseTransition pausa = new PauseTransition(Duration.millis(1200));
+                pausa.setOnFinished(ev -> {
+                    botonPiedra.setDisable(false);
+                    botonPapel.setDisable(false);
+                    botonTijera.setDisable(false);
+                });
+                pausa.play();
             } else if (mensaje.startsWith("MARCADOR:")) {
                 labelMarcador.setText(mensaje);
             } else if (mensaje.contains("¿Quieres jugar otra partida?")) {
