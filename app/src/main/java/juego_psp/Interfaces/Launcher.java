@@ -1,4 +1,4 @@
-package juego_psp.interfaces;
+package juego_psp.Interfaces;
 
 /**
  * Clase lanzadora para ejecutar la aplicación JavaFX.

@@ -1,4 +1,4 @@
-package juego_psp.ppt;
+package juego_psp.PPT;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;

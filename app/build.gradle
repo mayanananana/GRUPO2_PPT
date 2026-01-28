@@ -40,7 +40,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'juego_psp.interfaces.Launcher'
+    mainClass = 'juego_psp.Interfaces.Launcher'
 }
 
 tasks.named('test') {
@@ -53,7 +53,7 @@ task runGUI(type: JavaExec) {
     group = 'PPT Game'
     description = 'Ejecuta la interfaz gráfica JavaFX del juego'
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'juego_psp.interfaces.Launcher'
+    mainClass = 'juego_psp.Interfaces.Launcher'
 }
 
 // Tarea para ejecutar el SERVIDOR en la terminal (sin GUI)
