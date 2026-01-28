@@ -1,4 +1,4 @@
-package juego_psp.ppt;
+package juego_psp.PPT;
 
 import java.io.IOException;
 import java.net.ServerSocket;
