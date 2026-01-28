@@ -63,9 +63,9 @@ public class HandlerPPT implements Runnable {
     }
 
     private void jugarPartida(BufferedReader in, PrintWriter out) throws IOException {
-        puntosJugador = 0;
-        puntosBot = 0;
-        rondasJugadas = 0;
+        puntosJugador = 0; // puntos del jugador
+        puntosBot = 0; // puntos del bot
+        rondasJugadas = 0; // rondas jugadas
 
         while (puntosJugador < 2 && puntosBot < 2) {
             out.println("\n--- RONDA " + (rondasJugadas + 1) + " ---");

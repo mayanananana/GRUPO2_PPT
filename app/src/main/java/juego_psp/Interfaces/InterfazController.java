@@ -142,7 +142,7 @@ public class InterfazController {
      * Arranca el servidor local y conecta el cliente.
      */
     @FXML
-    private void iniciarJuego() {
+    private void iniciarJuego() { // INICIA EL SERVIDOR Y EL CLIENTE
         System.out.println("--- INICIANDO JUEGO ---");
 
         servidor = new ServidorPPT(PUERTO);
@@ -159,8 +159,8 @@ public class InterfazController {
         botonPiedra.setDisable(false);
         botonPapel.setDisable(false);
         botonTijera.setDisable(false);
-        subtitulo.setText("¡La partida ha comenzado!");
-        labelResultadoRonda.setText("¡Esperando tu jugada!");
+        subtitulo.setText("¡La partida ha comenzado");
+        labelResultadoRonda.setText("¡Esperando tu jugada");
         resetVisuals();
     }
 

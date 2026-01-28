@@ -28,7 +28,7 @@
                 <!-- El Area de Juego ahora estará oculta o tendrá un tamaño mínimo para depuración si se desea, pero el usuario pidió que no salga todo seguido y sea visual -->
                 <TextArea fx:id="areaDeJuego" editable="false" managed="false" prefHeight="0.0" prefWidth="0.0" visible="false" wrapText="true" />
 
-                <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: rgba(255,255,255,0.1); -fx-padding: 20; -fx-background-radius: 15;">
+                <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: rgba(229, 116, 116, 0.86); -fx-padding: 20; -fx-background-radius: 15;">
                     <children>
                         <HBox alignment="CENTER" spacing="50.0">
                             <children>
