@@ -69,7 +69,8 @@ public class HandlerPPT implements Runnable {
         rondasJugadas = 0;
         String resultadoRonda="";
 
-        while (rondasJugadas < 3) {
+        // Jugar hasta que alguno llegue a 2 puntos (sin límite de rondas)
+        while (puntosJugador < 2 && puntosBot < 2) {
             out.println("\n--- RONDA " + (rondasJugadas + 1) + " ---");
             out.println("Ingresa tu jugada (" + PIEDRA + ", " + PAPEL + ", " + TIJERAS + ") o " + SALIR + " para terminar:");
 
@@ -94,42 +95,12 @@ public class HandlerPPT implements Runnable {
             out.println("MARCADOR: Jugador " + puntosJugador + " - " + puntosBot + " Servidor");
         }
 
-        // Regla de desempate
-        if (puntosJugador == puntosBot && rondasJugadas == 3) {
-            out.println("\n¡EMPATE EN LAS 3 RONDAS! Se jugará una ronda de desempate.");
-            jugarRondaDesempate(in, out);
-        } else {
-            anunciarGanadorPartida(out);
-        }
-    }
-
-    private void jugarRondaDesempate(BufferedReader in, PrintWriter out) throws IOException {
-        String resultadoRonda;
-        String jugadaCliente;
-
-        while (puntosJugador == puntosBot) {
-            out.println("DESEMPATE");
-            jugadaCliente = in.readLine();
-            if (jugadaCliente == null || jugadaCliente.equalsIgnoreCase(SALIR)) {
-                out.println("Juego terminado.");
-                return;
-            }
-
-            if (!esJugadaValida(jugadaCliente)) {
-                out.println("ERROR: Jugada no válida. Inténtalo de nuevo.");
-                continue;
-            }
-
-            String jugadaServidor = generarJugadaServidor();
-            out.println("El servidor eligió: " + jugadaServidor);
-
-            resultadoRonda = determinarGanador(jugadaCliente.toUpperCase(), jugadaServidor);
-            out.println(resultadoRonda);
-            out.println("MARCADOR: Jugador " + puntosJugador + " - " + puntosBot + " Servidor");
-        }
-
+        // Cuando sale del bucle, uno de los jugadores alcanzó 2 puntos
         anunciarGanadorPartida(out);
     }
+
+    // Nota: método de desempate eliminado; las rondas continúan hasta que
+    // alguno alcance 2 puntos.
 
     private void anunciarGanadorPartida(PrintWriter out) {
         out.println("\n--- FIN DE LA PARTIDA ---");
