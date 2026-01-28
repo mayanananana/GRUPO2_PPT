@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'juego_psp.PPT.ServidorPPT'
+    mainClass = 'juego_psp.ppt.ServidorPPT'
 }
 
 tasks.named('test') {
@@ -47,7 +47,7 @@ task runServer(type: JavaExec) {
     group = 'PPT Game'
     description = 'Ejecuta el servidor de Piedra, Papel o Tijeras'
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'juego_psp.PPT.ServidorPPT'
+    mainClass = 'juego_psp.ppt.ServidorPPT'
     standardInput = System.in
 }
 
@@ -56,6 +56,6 @@ task runClient(type: JavaExec) {
     group = 'PPT Game'
     description = 'Ejecuta el cliente de Piedra, Papel o Tijeras'
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'juego_psp.PPT.ClientePPT'
+    mainClass = 'juego_psp.ppt.ClientePPT'
     standardInput = System.in
 }

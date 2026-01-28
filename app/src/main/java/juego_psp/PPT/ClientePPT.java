@@ -1,4 +1,4 @@
-package juego_psp.PPT;
+package juego_psp.ppt;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,9 +16,9 @@ public class ClientePPT {
         System.out.println("--------- Iniciando Cliente de PPT ---------");
 
         try (Socket socket = new Socket(host, puerto);
-             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             Scanner teclado = new Scanner(System.in)) {
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                Scanner teclado = new Scanner(System.in)) {
 
             String lineaServidor;
             // Bucle principal para leer mensajes del servidor
@@ -30,7 +30,7 @@ public class ClientePPT {
                     System.out.print("Tu jugada > ");
                     String jugada = teclado.nextLine();
                     out.println(jugada);
-                } 
+                }
                 // Si el servidor pregunta si jugar de nuevo
                 else if (lineaServidor.contains("¿Quieres jugar otra partida?")) {
                     System.out.print("Respuesta (SI/NO) > ");
@@ -42,10 +42,10 @@ public class ClientePPT {
                         // porque el servidor cerrará la conexión (readLine devolverá null).
                     }
                 }
-                 // Si el servidor nos dice que nos vayamos
-                else if(lineaServidor.contains("Hasta pronto!")){
+                // Si el servidor nos dice que nos vayamos
+                else if (lineaServidor.contains("Hasta pronto!")) {
                     break;
-                } else if(lineaServidor.contains("DESEMPATE")){
+                } else if (lineaServidor.contains("DESEMPATE")) {
                     System.out.println("Ingresa tu jugada (PIEDRA, PAPEL, TIJERAS) o SALIR para terminar");
                     System.out.print("Tu jugada >");
                     String respuesta = teclado.nextLine();
