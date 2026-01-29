@@ -5,10 +5,23 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 
+/**
+ * Servidor para el juego de Piedra, Papel, Tijeras (PPT).
+ * Acepta múltiples clientes y delega cada uno a un hilo {@link HandlerPPT}
+ * para jugar.
+ */
 public class ServidorPPT {
     private static final int PUERTO = 9999; // el servidor espera conexiones en este puerto
     private static volatile boolean active = true;
 
+    /**
+     * Método principal que inicia el servidor.
+     * Escucha las conexiones de los clientes en un bucle y crea un nuevo hilo para
+     * cada cliente.
+     * El servidor se puede detener de forma segura con Ctrl+C.
+     * 
+     * @param args Argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
 
         // Permite el cierre de la app con Ctrl+C

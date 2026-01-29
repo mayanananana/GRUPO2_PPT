@@ -8,7 +8,17 @@ import java.net.ConnectException;
 import java.net.Socket;
 import java.util.Scanner;
 
+/**
+ * Cliente para el juego de Piedra, Papel, Tijeras (PPT).
+ * Se conecta a un servidor para jugar una partida.
+ */
 public class ClientePPT {
+    /**
+     * Método principal que inicia el cliente, se conecta al servidor y gestiona la
+     * interacción del juego.
+     * 
+     * @param args Argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         String host = "localhost";
         int puerto = 9999;

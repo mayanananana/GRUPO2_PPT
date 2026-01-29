@@ -7,6 +7,12 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Random;
 
+/**
+ * Gestiona la lógica del juego de Piedra, Papel, Tijeras para un cliente
+ * conectado.
+ * Cada instancia de esta clase se ejecuta en un hilo separado para manejar a un
+ * cliente.
+ */
 public class HandlerPPT implements Runnable {
 
     private static final String PIEDRA = "PIEDRA";
@@ -25,12 +31,21 @@ public class HandlerPPT implements Runnable {
     private int rondasJugadas;
     private final Random random = new Random();
 
+    /**
+     * Constructor para el manejador del juego.
+     * 
+     * @param socket El socket del cliente que se ha conectado.
+     */
     public HandlerPPT(Socket socket) {
         this.socket = socket;
         this.puntosJugador = 0;
         this.puntosBot = 0;
     }
 
+    /**
+     * Punto de entrada del hilo. Gestiona la sesión de juego completa con un
+     * cliente.
+     */
     @Override
     public void run() {
         try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -62,6 +77,13 @@ public class HandlerPPT implements Runnable {
         }
     }
 
+    /**
+     * Controla el flujo de una única partida (al mejor de 2 puntos).
+     * 
+     * @param in  El lector para recibir los mensajes del cliente.
+     * @param out El escritor para enviar mensajes al cliente.
+     * @throws IOException Si hay un error de comunicación.
+     */
     private void jugarPartida(BufferedReader in, PrintWriter out) throws IOException {
         puntosJugador = 0;
         puntosBot = 0;
@@ -96,6 +118,11 @@ public class HandlerPPT implements Runnable {
         anunciarGanadorPartida(out);
     }
 
+    /**
+     * Anuncia el resultado final de la partida al cliente.
+     * 
+     * @param out El escritor para enviar mensajes al cliente.
+     */
     private void anunciarGanadorPartida(PrintWriter out) {
         out.println("\n--- FIN DE LA PARTIDA ---");
         if (puntosJugador > puntosBot) {
@@ -107,10 +134,21 @@ public class HandlerPPT implements Runnable {
         }
     }
 
+    /**
+     * Genera una jugada aleatoria para el servidor (Bot).
+     * 
+     * @return La jugada del servidor (PIEDRA, PAPEL o TIJERAS).
+     */
     private String generarJugadaServidor() {
         return opciones[random.nextInt(opciones.length)];
     }
 
+    /**
+     * Comprueba si la jugada del cliente es una de las opciones válidas.
+     * 
+     * @param jugada La jugada introducida por el cliente.
+     * @return true si la jugada es válida, false en caso contrario.
+     */
     boolean esJugadaValida(String jugada) {
         for (String opcion : opciones) {
             if (opcion.equalsIgnoreCase(jugada)) {
@@ -120,6 +158,15 @@ public class HandlerPPT implements Runnable {
         return false;
     }
 
+    /**
+     * Determina el ganador de una ronda comparando las jugadas del jugador y del
+     * servidor.
+     * Actualiza los contadores de puntos.
+     * 
+     * @param jugador  La jugada del cliente.
+     * @param servidor La jugada del servidor.
+     * @return Un String que describe el resultado de la ronda.
+     */
     String determinarGanador(String jugador, String servidor) {
         if (jugador.equals(servidor)) {
             return "RONDA: EMPATE";
