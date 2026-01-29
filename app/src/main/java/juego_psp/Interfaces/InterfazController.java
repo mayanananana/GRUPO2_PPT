@@ -151,7 +151,14 @@ public class InterfazController {
         hiloServidor.start();
         System.out.println("SERVIDOR: Iniciado en el puerto " + PUERTO);
 
+        // Instancia el cliente pasándole la dirección, el puerto y una función
+        // (callback)
+        // para que el cliente sepa qué hacer cuando reciba mensajes del servidor.
         cliente = new ClientePPT(HOST, PUERTO, this::mostrarMensajeEnLog);
+
+        // Intenta establecer la conexión física por red (Socket) con el servidor
+        // y arranca un hilo en segundo plano para escuchar respuestas sin bloquear la
+        // interfaz.
         cliente.conectar();
         System.out.println("CLIENTE: Conectado a " + HOST + ":" + PUERTO);
 
