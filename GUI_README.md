@@ -1,72 +1,36 @@
-# 🎮 Piedra, Papel o Tijeras - Versión GRÁFICA (Interfaz JavaFX)
+#  Piedra, Papel o Tijeras - Versión Interfaz JavaFX
 
-## 📍 Estás en la rama: `main`
+## rama: `main`
 
-Esta es la **versión con interfaz gráfica** del proyecto, una **evolución** de la versión en consola que integra la misma lógica de sockets pero con una experiencia visual mejorada.
+Esta es la versión con interfaz gráfica del proyecto, una evolución  de la versión en consola que integra la misma lógica de sockets pero con una experiencia visual mejorada.
 
 ---
 
-## 🚀 Cómo Ejecutar
 
-### Opción 1: Con Interfaz Gráfica (TODO integrado)
-```bash
-gradle runGUI
-# o simplemente:
-gradle run
-```
+
 
 Se abrirá una ventana con:
-- 🎮 Botones para Piedra, Papel, Tijera
-- 📊 Visualización de jugadas
-- 📈 Marcador en tiempo real
-- 📝 Área de logs con los eventos del juego
+-  Botones para Piedra, Papel, Tijera
+-  Visualización de jugadas
+- Marcador en tiempo real
+- Área de logs con los eventos del juego
 
 ---
 
-### Opción 2: Modo Híbrido (Servidor en consola + GUI)
 
-**Terminal 1 - Servidor en consola:**
-```bash
-gradle runServer
-```
 
-**Terminal 2 - Cliente con GUI:**
-```bash
-gradle runGUI
-```
-
-Así puedes ver los logs del servidor en una terminal mientras juegas en la GUI.
-
----
-
-### Opción 3: Modo Consola Puro (sin GUI)
-
-Si quieres ver la versión sin interfaz:
-
-**Terminal 1:**
-```bash
-gradle runServer
-```
-
-**Terminal 2:**
-```bash
-gradle runClient
-```
-
----
-
-## 🎨 Interfaz Gráfica
+##  Interfaz Gráfica
 
 ### Elementos Principales
 
-```
+
 ┌──────────────────────────────────────────────┐
 │     Piedra, Papel o Tijeras - CLIENTE        │
 ├──────────────────────────────────────────────┤
 │                                              │
 │  [INICIAR PARTIDA]                          │
 │                                              │
-│  Tu Jugada:  🤔        Servidor: 🤔         │
+│  Tu Jugada:          Servidor:         │
 │                                              │
 │  [ 🪨 PIEDRA ] [ 📄 PAPEL ] [ ✂ TIJERA ]   │
 │                                              │
@@ -83,9 +47,9 @@ gradle runClient
 │  [ SÍ ]  [ NO ]  (aparecen al final)         │
 │                                              │
 └──────────────────────────────────────────────┘
-```
 
-### Flujo de la GUI
+
+ Flujo de la GUI
 
 1. **Al iniciar**: Solo el botón "INICIAR PARTIDA" está activo
 2. **Al hacer click**: 
@@ -101,11 +65,11 @@ gradle runClient
 
 ---
 
-## 🏗️ Arquitectura Código (Main)
+  Arquitectura Código (Main)
 
 ### Relación entre Clases
 
-```
+
 Launcher (main)
     ↓
 InterfazUsuario (Application JavaFX)
@@ -313,21 +277,20 @@ Ya están en la TextArea de la GUI.
 
 ---
 
-## 📚 Aprendizaje Progresivo
 
-### Paso 1: Entender Consola
+ Entender Consola
 1. Ir a rama `base-sin-interfaz`
 2. Leer `ServidorPPT.java` → Entender Sockets
 3. Leer `HandlerPPT.java` → Entender Protocolo
 4. Ejecutar `gradle runServer` y `gradle runClient`
 
-### Paso 2: Entender GUI
+ Entender GUI
 1. Volver a rama `main`
 2. Leer `InterfazController.java` → Ver cómo se integra
 3. Notar que `ServidorPPT.java` es **idéntico**
 4. Ver cómo `ClientePPT.java` usa **callbacks**
 
-### Paso 3: Extensiones
+Extensiones
 - Agregar chat entre jugadores
 - Mostrar histórico de partidas
 - Guardar stats en base de datos
@@ -336,7 +299,7 @@ Ya están en la TextArea de la GUI.
 ---
 
 
-## ⚠️ Cosas Importantes
+## Cosas Importantes
 
 1. **El servidor y cliente corren en la misma app**: Esto es para demostración. En producción estarían en máquinas diferentes.
 
